@@ -24,12 +24,6 @@ const MovieDetail: React.FC<MovieDetailProps> = ({ movie }) => (
         className={styles.movieDetailImage}
       />
     </div>
-  // <div>
-  //   <h1>{movie.title}</h1>
-  //   <p>Episode: {movie.episode_id}</p>
-  //   <p>Release Date: {movie.release_date}</p>
-  //   <p>{movie.opening_crawl}</p>
-  // </div>
 );
 
 export default MovieDetail;

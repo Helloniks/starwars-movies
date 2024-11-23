@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { FILTER_MOVIES, FETCH_MOVIES, SORT_MOVIES } from '../redux/actions/actions';
+import { FILTER_MOVIES, FETCH_MOVIES, SORT_MOVIES } from '../../redux/actions/actions';
 import styles from './MovieFilter.module.scss';
 
 const MovieFilter: React.FC = () => {

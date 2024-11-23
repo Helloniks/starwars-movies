@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { FETCH_MOVIES, SELECT_MOVIE } from '../redux/actions/actions';
-import MovieDetail from './MovieDetail';
-import MovieFilter from './MovieFilter';
+import { FETCH_MOVIES, SELECT_MOVIE } from '../../redux/actions/actions';
+import MovieDetail from '../MovieDetail/MovieDetail';
 
 import styles from './MovieList.module.scss';
 
