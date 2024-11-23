@@ -1,0 +1,39 @@
+.movieFilterContainer {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.sortAndFilterContainer {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.sortSelect {
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.movieFilterInput {
+  padding: 8px;
+  font-size: 14px;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.movieFilterInput:focus,
+.sortSelect:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.sortSelect option {
+  padding: 8px;
+}

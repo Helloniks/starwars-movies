@@ -1,0 +1,67 @@
+// MovieList.module.scss
+
+.movieListContainer {
+  display: flex;
+  gap: 30px;
+}
+
+.movieListLeft {
+  flex: 1;
+}
+
+.movieListRight {
+  flex: 1;
+}
+
+.movieCardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.movieCard {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 100%;
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.movieHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.episodeNumber {
+  font-weight: bold;
+  color: #333;
+}
+
+.releaseDate {
+  color: #666;
+}
+
+.movieTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #222;
+}
+
+.movieRating {
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffcc00;  
+  margin-top: 0px;
+  text-align: center;
+}
+
+.movieRating::before {
+  content: "★ "; 
+  color: #ffcc00;  
+}

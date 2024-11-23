@@ -1,4 +1,4 @@
-import { FETCH_MOVIES, SET_MOVIES, SELECT_MOVIE, FILTER_MOVIES, SORT_MOVIES } from '../actions/actions';
+import { SET_MOVIES, SELECT_MOVIE, FILTER_MOVIES, SORT_MOVIES } from '../actions/actions';
 
 interface Movie {
   title: string;
@@ -26,10 +26,22 @@ const moviesReducer = (state = initialState, action: any) => {
     case SELECT_MOVIE:
       return { ...state, selectedMovie: action.payload };
     case FILTER_MOVIES:
-      return { ...state, filter: action.payload };
+      const filteredMovies = state.movies.filter((movie: Movie) => {
+        const filterText = action.payload.toLowerCase();
+        return (
+          movie.title.toLowerCase().includes(filterText) ||
+          movie.episode_id.toString().includes(filterText)
+        );
+      });
+      return { ...state, movies: filteredMovies };
     case SORT_MOVIES:
-      const sortedMovies = state.movies.slice().sort((a: Movie, b: Movie) => a.episode_id - b.episode_id);
-      return { ...state, movies: sortedMovies };
+        const sortedMovies = state.movies.slice().sort((a: Movie, b: Movie) => {
+          if (action.payload === 'title') {
+            return a.title.localeCompare(b.title); 
+          }
+          return a.episode_id - b.episode_id; 
+        });
+        return { ...state, movies: sortedMovies };
     default:
       return state;
   }

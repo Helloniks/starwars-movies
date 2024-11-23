@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './MovieDetail.module.scss';
 
 interface MovieDetailProps {
   movie: {
@@ -10,12 +11,25 @@ interface MovieDetailProps {
 }
 
 const MovieDetail: React.FC<MovieDetailProps> = ({ movie }) => (
-  <div>
-    <h1>{movie.title}</h1>
-    <p>Episode: {movie.episode_id}</p>
-    <p>Release Date: {movie.release_date}</p>
-    <p>{movie.opening_crawl}</p>
-  </div>
+  <div className={styles.movieDetailContainer}>
+      <h2 className={styles.movieDetailHeading}>{movie.title}</h2>
+      <p className={styles.movieDetailDescription}>{movie.opening_crawl}</p>
+      <div className={styles.movieDetailMeta}>
+        <span>Episode ID: {movie.episode_id}</span>
+        <span>Release Date: {movie.release_date}</span>
+      </div>
+      <img
+        src={`https://starwars-visualguide.com/assets/img/films/${movie.episode_id}.jpg`}
+        alt={movie.title}
+        className={styles.movieDetailImage}
+      />
+    </div>
+  // <div>
+  //   <h1>{movie.title}</h1>
+  //   <p>Episode: {movie.episode_id}</p>
+  //   <p>Release Date: {movie.release_date}</p>
+  //   <p>{movie.opening_crawl}</p>
+  // </div>
 );
 
 export default MovieDetail;
